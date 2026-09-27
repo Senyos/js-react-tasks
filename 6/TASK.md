@@ -7,15 +7,15 @@
 
 Пример использования:
 
-````js
+```js
 <Alert type="warning" text="what is love?" />;
-``
+```
 
 Вывод:
 
 ```js
 <div class="alert alert-warning" role="alert">what is love?</div>
-````
+```
 
 Подсказки:
 
