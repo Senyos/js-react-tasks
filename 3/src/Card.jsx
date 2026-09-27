@@ -1,7 +1,7 @@
 import React from 'react';
 
 // BEGIN (write your solution here)
-const getCard = (props) => {
+const Card = (props) => {
     return (
         <div className="card">
             <div className="card-body">
@@ -12,5 +12,5 @@ const getCard = (props) => {
     );
 }
 
-export default getCard;
+export default Card;
 // END
