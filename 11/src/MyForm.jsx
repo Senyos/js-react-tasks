@@ -14,15 +14,15 @@ const MyForm = () => {
     const submit = (e) => {
         e.preventDefault();
 
-        const newFormData = new FormData(e.target);
-        const data = Object.fromEntries(newFormData.entries());
+        // const newFormData = new FormData(e.target);
+        // const data = Object.fromEntries(newFormData.entries());
 
-        setEmail(data.email);
-        setPassword(data.password);
-        setCountry(data.country);
-        setCity(data.city);
-        setAddress(data.address);
-        setAcceptRules(data.acceptRules === "on" ? "true" : "false");
+        // setEmail(data.email);
+        // setPassword(data.password);
+        // setCountry(data.country);
+        // setCity(data.city);
+        // setAddress(data.address);
+        // setAcceptRules(data.acceptRules === "on" ? "true" : "false");
 
         setSubmitted(true);
     }
@@ -41,7 +41,8 @@ const MyForm = () => {
                     className="form-control"
                     id="email"
                     placeholder="Email"
-                    defaultValue={email}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     />
         </div>
         <div className="col-md-6 mb-3">
@@ -52,7 +53,8 @@ const MyForm = () => {
                     className="form-control"
                     id="password"
                     placeholder="Password"
-                    defaultValue={password}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     />
         </div>
         <div className="col-md-6 mb-3">
@@ -63,21 +65,21 @@ const MyForm = () => {
                     name="address"
                     id="address"
                     placeholder="1234 Main St"
-                    defaultValue={address}
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
                     ></textarea>
         </div>
         <div className="col-md-6 mb-3">
             <label htmlFor="city" className="col-form-label">City</label>
-            <input type="text" className="form-control" name="city" id="city" />
+            <input type="text" className="form-control" name="city" id="city" value={city} onChange={(e) => setCity(e.target.value)} />
         </div>
         <div className="col-md-6 mb-3">
             <label htmlFor="country" className="col-form-label">Country</label>
-            <select id="country" name="country" className="form-control">
+            <select id="country" name="country" className="form-control" value={country} onChange={(e) => setCountry(e.target.value)} >
                 <option value="">Choose</option>
                 <option value="argentina">Argentina</option>
                 <option value="russia">Russia</option>
                 <option value="china">China</option>
-                defaultValue={country}
             </select>
         </div>
         <div className="col-md-6 mb-3">
@@ -88,7 +90,8 @@ const MyForm = () => {
                             type="checkbox"
                             name="acceptRules"
                             className="form-check-input"
-                            defaultValue={acceptRules}
+                            checked={acceptRules}
+                            onChange={(e) => setAcceptRules(e.target.checked)}
                             />
                     Accept Rules
                 </label>
@@ -101,7 +104,7 @@ const MyForm = () => {
                 <tbody>
                     <tr>
                         <td>acceptRules</td>
-                        <td>{acceptRules}</td>
+                        <td>{`${acceptRules === true ? "true" : "false" }`}</td>
                     </tr>
                     <tr>
                         <td>address</td>
