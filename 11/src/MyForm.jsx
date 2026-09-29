@@ -104,7 +104,7 @@ const MyForm = () => {
                 <tbody>
                     <tr>
                         <td>acceptRules</td>
-                        <td>{`${acceptRules === true ? "true" : "false" }`}</td>
+                        <td>{acceptRules ? "true" : "false"}</td>
                     </tr>
                     <tr>
                         <td>address</td>
