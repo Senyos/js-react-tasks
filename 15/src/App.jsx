@@ -26,7 +26,20 @@ const themes = [
 
 class App extends React.Component {
   // BEGIN (write your solution here)
-
+    render() {
+        return (
+            <Tabs>
+                <Tab eventKey="login" title="Login">
+                    <Home />
+                    <ThemeSwitcher />
+                </Tab>
+                <Tab eventKey="registration" title="Registration">
+                    <Profile />
+                    <ThemeSwitcher />
+                </Tab>
+            </Tabs>
+        );
+    }
   // END
 }
 
